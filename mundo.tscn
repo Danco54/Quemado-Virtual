@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ajnq8gahuuk"]
+
+[ext_resource type="PackedScene" uid="uid://bp8eqhialmd5v" path="res://player.tscn" id="1_lobio"]
+[ext_resource type="Texture2D" uid="uid://d2sfmm5wei7lr" path="res://icon.svg" id="2_8ojby"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv1ry"]
+size = Vector2(1285, 27)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_lobio")]
+position = Vector2(508, 326)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(845, 397)
+scale = Vector2(10.0625, 0.203125)
+texture = ExtResource("2_8ojby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(843.5, 394.5)
+shape = SubResource("RectangleShape2D_cv1ry")
